@@ -8,7 +8,7 @@ RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 test
 RUN  echo 'test:test' | chpasswd
 
 # Add test user to sudoers to skip sudo password asking
-RUN echo 'test ALL=(ALL) NOPASSWD: ALL' | tee -a /etc/sudoers
+#RUN echo 'test ALL=(ALL) NOPASSWD: ALL' | tee -a /etc/sudoers
 
 RUN service ssh start
 
