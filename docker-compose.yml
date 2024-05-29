@@ -2,22 +2,20 @@ version: "3"
 
 services:
 
-  alpine-git:
+  ubuntu:
 
-    image: alpine/git:latest
-    container_name: alpine-git
+    image: ubuntu:latest
+    container_name: ubuntu
     restart: always
 
     environment:
 
-      COMPOSE_PROJECT_NAME: alpine-git
+      COMPOSE_PROJECT_NAME: ubuntu
 
     volumes:
-      - ./root:/root
-      - ./git:/git
+      - ./data:/mnt/data
 
     ports:
       - "222:22"
 
     network_mode: bridge
-
