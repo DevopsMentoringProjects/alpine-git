@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+
+  alpine-git:
+
+    image: alpine/git:latest
+    container_name: alpine-git
+    restart: always
+
+    environment:
+
+      COMPOSE_PROJECT_NAME: alpine-git
+
+    volumes:
+      - ./root:/root
+      - ./git:/git
+
+    ports:
+      - "222:22"
+
+    network_mode: bridge
+
